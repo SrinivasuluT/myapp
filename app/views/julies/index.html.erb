@@ -1,0 +1,29 @@
+<h1>Listing julies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Month</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @julies.each do |july| %>
+      <tr>
+        <td><%= july.day %></td>
+        <td><%= july.month %></td>
+        <td><%= link_to 'Show', july %></td>
+        <td><%= link_to 'Edit', edit_july_path(july) %></td>
+        <td><%= link_to 'Destroy', july, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New July', new_july_path %>
